@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.switch {
+    @apply relative inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    @apply opacity-0 w-0 h-0;
+}
+
+.slider {
+    @apply absolute cursor-pointer top-0 left-0 right-0 bottom-0 transition duration-300;
+    background-color: #ccc;
+    border-radius: 34px;
+}
+
+.slider:before {
+    @apply absolute transition duration-300;
+    border-radius: 50%;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+}
+
+.switch input:checked+.slider {
+    @apply bg-purple-700;
+}
+
+.switch input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.disabled .slider {
+    background-color: rgba(204, 204, 204, 0.4);
+    cursor: not-allowed;
+}
+
+.disabled .slider:before {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.disabled input {
+    cursor: not-allowed;
+}
+
+/* Spinner */
+#loading {
+    display: inline-block;
+    border: 3px solid rgba(108, 43, 217, 0.6);
+    border-radius: 50%;
+    border-top-color: #5521b5;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.react-datepicker-wrapper {
+    width: auto !important;
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+/* DatePicker Antd */
+.disable-super-next .ant-picker-header-super-next-btn {
+    @apply hidden;
+}
+
+.disable-super-prev .ant-picker-header-super-prev-btn {
+    @apply hidden;
+}

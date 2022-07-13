@@ -1,0 +1,12 @@
+.ant-picker-range .ant-picker-active-bar {
+  background: #6c2bd9 !important;
+}
+
+.ant-picker-focused {
+  border-color: #ac94fa !important;
+  box-shadow: 0 0 0 2px rgba(202, 191, 253, 0.45) !important;
+}
+.ant-picker-focused,
+.ant-picker:hover {
+  border-color: #ac94fa !important;
+}
